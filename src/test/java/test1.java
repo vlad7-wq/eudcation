@@ -1,22 +1,20 @@
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class test1 {
-
-    static ChromeDriver driver;
-
-    @Before
-    public static void initChrome() {
-        System.setProperty("webdriver.chrome.driver", "D:\\chromedriver\\chromedriver.exe");
-        driver = new ChromeDriver();
-    }
-
-    @Test
-    public void test() {
-        driver.get("https://google.com");
+    public static void main(String[] args) {
+        //System.setProperty("webdriver.chrome.driver", "D:\\chromedriver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://ithillel.ua/");
+        WebElement findElement = driver.findElement(By.id("btn-consultation-hero"));
+        try {
+            driver.wait(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.quit();
     }
 }
