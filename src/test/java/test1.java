@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class test1 {
     public static void main(String[] args) {
-        //System.setProperty("webdriver.chrome.driver", "D:\\chromedriver\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://ithillel.ua/");
         WebElement findElement = driver.findElement(By.id("btn-consultation-hero"));
